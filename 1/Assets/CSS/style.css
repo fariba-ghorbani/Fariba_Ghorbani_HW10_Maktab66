@@ -1,0 +1,67 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.board {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    min-height: 300px;
+    min-width: 300px;
+    width: min(80vh, 80vw);
+    height: min(80vh, 80vw);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(243, 243, 243);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 20px;
+}
+.tile {
+    border: rgb(167, 167, 167) solid 2px;
+    width: max(100px, 33%);
+    height: max(100px, 33%);
+    position: relative;
+    cursor: pointer;
+}
+
+/* x positioning */
+.fill-x::before,
+.fill-x::after {
+    content: '';
+    position: absolute;
+    background-color: black;
+    width: 15px;
+    height: 80px;
+}
+.fill-x::before {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.fill-x::after {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* o positioning */
+.fill-o::after {
+    content: '';
+    position: absolute;
+    background-color: none;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: solid 10px black;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+/* cursor */
+.fill-x, .fill-o {
+    cursor: not-allowed;
+}
