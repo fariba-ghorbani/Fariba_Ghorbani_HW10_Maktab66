@@ -3,6 +3,21 @@
     margin: 0;
     padding: 0;
 }
+body {
+}
+.turn {
+    height: 60px;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgb(243, 243, 243);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 40px 20px;
+    font-size: 3rem;
+}
 .board {
     display: flex;
     flex-wrap: wrap;
@@ -18,7 +33,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: rgb(243, 243, 243);
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 40px 20px;
 }
 .tile {
     border: rgb(167, 167, 167) solid 2px;
@@ -64,4 +79,41 @@
 /* cursor */
 .fill-x, .fill-o {
     cursor: not-allowed;
+}
+/* winning */
+.board.game-over.win-x::after {
+    content: "X Wins!";
+    color: white;
+    background-color: rgba(0, 0, 0, 0.719);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+}
+.board.game-over.win-o::after {
+    content: "O Wins!";
+    color: white;
+    background-color: rgba(0, 0, 0, 0.719);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+}
+.board.game-over.draw::after {
+    content: "It's Draw!";
+    color: white;
+    background-color: rgba(0, 0, 0, 0.719);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
 }
