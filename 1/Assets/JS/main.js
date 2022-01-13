@@ -37,7 +37,7 @@ tiles.forEach(tile => {
                     document.body.addEventListener('click', e => {
                         window.location.reload();
                     })
-                }, 1500)
+                }, 1000)
                 return
             }
             // check draw
@@ -48,7 +48,7 @@ tiles.forEach(tile => {
                     document.body.addEventListener('click', e => {
                         window.location.reload();
                     }, true)
-                }, 1000)
+                }, 500)
                 return
             }
             // continue
